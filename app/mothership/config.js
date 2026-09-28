@@ -3,7 +3,7 @@ export const MOTHERSHIP = {
   youtubeChannelId: 'UCC8nC8Q_eW7ZEwLPhib_GQQ',
   youtubeHandle: '@thehouseofzaharah',
   tiktokHandle: '@houseofzaharah',
-  twitchUrl: 'https://www.twitch.tv/',
+  twitchUrl: 'https://www.twitch.tv/bluestripbarbie',
   kickUrl: 'https://kick.com/',
   registerUrl: 'https://bit.ly/3T5oYTq',
   masterclass: { label: 'The Motherboard Agentic AI Masterclass', when: 'Tuesday, September 29 · 5:30 PM PT', meet: 'https://meet.google.com/wap-dqhc-eho' },
