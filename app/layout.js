@@ -2,7 +2,8 @@ import './globals.css';
 
 export const metadata = {
   title: 'Motherboard — Build Power Around Real Life',
-  description: 'An AI business academy for mothers ready to turn what they know into offers, systems, and income.',
+  description: 'The agentic AI builder academy for women. Build a digital workforce around your intelligence — and own what you build.',
+  openGraph: { title: 'Motherboard — Build Power Around Real Life', description: 'Free live Agentic AI Masterclass · Tuesday, Sept 29 · 5:30 PM PT', url: 'https://motherboard-vad4.vercel.app', siteName: 'Motherboard' },
 };
 
 export default function RootLayout({ children }) {
