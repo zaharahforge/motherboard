@@ -1,12 +1,13 @@
 import Link from 'next/link';
 import EmberlinConsole from './EmberlinConsole';
+import Constellation from './Constellation';
 import { MOTHERSHIP as C } from './config';
 export const metadata = { title: 'The Mothership — Motherboard Live', description: 'Motherboard’s livestream hub. Build in public with T. Evans and Emberlin, the live AI co-host.' };
 export default function Mothership(){
   const embed = C.youtubeChannelId ? `https://www.youtube.com/embed/live_stream?channel=${C.youtubeChannelId}&autoplay=1` : null;
   return <main className="ship">
     <div className="topbar shipbar">THE MOTHERSHIP • BOARDING OPEN • MASTERCLASS TUESDAY 5:30 PM PT</div>
-    <nav className="shipnav"><Link className="logo" href="/">MOTHER<span>BOARD</span></Link><div className="navlinks"><Link href="/masterclass">Masterclass</Link><Link href="/academy">Academy</Link><a href={`https://www.youtube.com/${C.youtubeHandle}`} target="_blank" rel="noreferrer">YouTube</a><a href={`https://www.tiktok.com/${C.tiktokHandle}`} target="_blank" rel="noreferrer">TikTok</a></div><a className="button small" href={C.registerUrl} target="_blank" rel="noreferrer">Save my seat</a></nav>
+    <nav className="shipnav"><Link className="logo" href="/">MOTHER<span>BOARD</span></Link><div className="navlinks"><Link href="/masterclass">Masterclass</Link><Link href="/academy">Academy</Link><a href={`https://www.youtube.com/${C.youtubeHandle}`} target="_blank" rel="noreferrer">YouTube</a><a href={`https://www.tiktok.com/${C.tiktokHandle}`} target="_blank" rel="noreferrer">TikTok</a><a href={C.twitchUrl} target="_blank" rel="noreferrer">Twitch</a><a href={C.kickUrl} target="_blank" rel="noreferrer">Kick</a></div><a className="button small" href={C.registerUrl} target="_blank" rel="noreferrer">Save my seat</a></nav>
     <section className="shiphero">
       <div className="rings"><i></i><i></i><i></i></div>
       <p className="eyebrow">MOTHERBOARD LIVE • HOME BASE</p>
@@ -21,6 +22,7 @@ export default function Mothership(){
       </div>
       <div className="side">
         <p className="eyebrow">CO-HOST</p>
+        <Constellation />
         <EmberlinConsole registerUrl={C.registerUrl} />
       </div>
     </section>

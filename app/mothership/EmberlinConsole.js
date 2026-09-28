@@ -20,7 +20,7 @@ export default function EmberlinConsole({ registerUrl }) {
       const r = await fetch('/api/emberlin', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ messages: next.map(({ role, content }) => ({ role, content })), handle, live: true }) });
       const d = await r.json();
       if (!r.ok) { setStatus(r.status === 503 ? 'DOCKED' : 'SIGNAL LOST'); setMsgs(m => [...m, { role: 'assistant', content: d.text || 'Emberlin lost signal.' }]); }
-      else { setStatus('ONLINE'); setMsgs(m => [...m, { role: 'assistant', content: d.text }]); if (d.viz?.length) setViz(d.viz[d.viz.length - 1]); }
+      else { setStatus('ONLINE'); setMsgs(m => [...m, { role: 'assistant', content: d.text }]); if (d.viz?.length) { setViz(d.viz[d.viz.length - 1]); d.viz.forEach(v => window.dispatchEvent(new CustomEvent('emberlin:viz', { detail: v }))); } }
     } catch { setStatus('SIGNAL LOST'); setMsgs(m => [...m, { role: 'assistant', content: 'Emberlin lost signal. Try again.' }]); }
     setBusy(false);
   }
